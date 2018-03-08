@@ -6,14 +6,14 @@ require 'uri'
 
 uri = URI('https://sandbox.safaricom.co.ke/mpesa/c2b/v1/simulate')
 
-http = Net::HTTP.new(url.host, url.port)
+http = Net::HTTP.new(uri.host, uri.port)
 http.use_ssl = true
 http.verify_mode = OpenSSL::SSL::VERIFY_NONE
 
-request = Net::HTTP::Get.new(url)
+request = Net::HTTP::Get.new(uri)
 request["accept"] = 'application/json'
 request["content-type"] = 'application/json'
-request["authorization"] = 'Bearer <Access-Token>Bearer 9fAAXHt9Olgs0Lt62mYo0FVk5mFV'
+request["authorization"] = 'Bearer 9fAAXHt9Olgs0Lt62mYo0FVk5mFV'
 request.body = "{ \"ShortCode\":\" \",
   \"CommandID\":\"CustomerPayBillOnline\",
   \"Amount\":\" \",
