@@ -19,5 +19,8 @@
   "bugs": {
     "url": "https://github.com/memetibryan/transaction-system/issues"
   },
-  "homepage": "https://github.com/memetibryan/transaction-system#readme"
+  "homepage": "https://github.com/memetibryan/transaction-system#readme",
+  "dependencies": {
+    "ngrok": "^3.0.0"
+  }
 }
