@@ -2,7 +2,6 @@ source 'https://rubygems.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.5'
-gem 'mpesa'
 gem 'dotenv-rails'
 gem 'pg', '~> 0.21.0'
 gem 'puma', '~> 3.7'
