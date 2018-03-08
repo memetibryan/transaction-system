@@ -1,0 +1,44 @@
+﻿					TRANSACTION SYSTEM						
+
+USER STORIES
+1. A new user should be able to register with the platform and all the registration details stored in a database (postgres)
+2. A current user should be able to login in to start a session using the credentials he/she used during initial registration.
+3. Once login in, the user can view the total amount he/she has.
+4. Crediting of one's account is via mpesa and any other transaction is via stripe payment method.
+5. Upon successful transaction, an email is sent to both the recipient and the sender confirming the transaction was made.
+a summary is sent to the individuals who made transactions that day via email.
+7. The system user interface should be responsive enough to work on mobile phones and other small screens.
+8. Upon completion of user transactions, the user should be able to log out thus terminating the session and the timestamp logged to the database.
+
+
+SYSTEM MODEL
+
+
+				    - Recieve money
+Login         User profile  – Send Money                            Logout
+				    - View Transactions summary
+
+
+View people available in the system.
+
+
+
+
+DATABASE TABLES
+
+1. Authentication table
+	-id (Primary key)
+	-Google credentials
+	-timestamps
+2. User table
+	-id (Primary key)
+	-Number(Foreign Key) – related to authentication table(id)
+	-email
+	-Account_balance
+	-timestamp
+3. Transactions table
+	-id (Primary key)
+	-sender
+	-recipient
+	-reference_number
+	-timestamps
