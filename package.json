@@ -1,0 +1,26 @@
+{
+  "name": "transaction_system",
+  "version": "1.0.0",
+  "description": "A client wants to build a web platform that can enable users to register and send",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib",
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/memetibryan/transaction-system.git"
+  },
+  "author": "Bryan Memeti",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/memetibryan/transaction-system/issues"
+  },
+  "homepage": "https://github.com/memetibryan/transaction-system#readme",
+  "dependencies": {
+    "ngrok": "^3.0.0"
+  }
+}
