@@ -5,12 +5,12 @@
 <% if @profile.id === current_user.id %>
 
     <ul>
-      <p>Name: <%= @p.name %></p>
-      <p>Email: <%= @p.email %></p>
-      <p>Telephone: <%= @p.number %></p>
-      <p>Account Balance: <%= @p.account_balance %></p>
+      <p>Name: <%= @profile.name %></p>
+      <p>Email: <%= @profile.email %></p>
+      <p>Telephone: <%= @profile.number %></p>
+      <p>Account Balance: <%= @profile.account_balance %></p>
     </ul>
 
   <% else %>
-    <p>User has no profile!</p>
+    <p>Not allowed to access this account!</p>
   <% end %>
