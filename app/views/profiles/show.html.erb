@@ -1,0 +1,14 @@
+<% content_for(:title, "User Profile") %>
+
+<div class="container-fluid">
+
+<% if @p.id === current_user.id %>
+
+    <ul>
+      <p>Name: <%= @p.name %></p>
+      <p>Email: <%= @p.email %></p>
+    </ul>
+
+  <% else %>
+    <p>User has no profile!</p>
+  <% end %>
