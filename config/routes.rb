@@ -4,13 +4,15 @@ Rails.application.routes.draw do
 
   devise_for :users do
   	resources :profiles
+  	resources :transactions
   end
 
   resources :profiles do
     resources :users
   end
 
-  resources :profiles
-  resources :transactions
+  resources :transactions do
+    resources :users
+  end
   
 end

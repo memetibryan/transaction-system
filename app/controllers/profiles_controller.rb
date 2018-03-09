@@ -9,7 +9,7 @@ class ProfilesController < ApplicationController
     end
 
     def new
-      @user = User.find(params[:id])
+      @user = User.find(2)
       @profile = @user.profiles.new
     end
 

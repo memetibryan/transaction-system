@@ -1,0 +1,19 @@
+<% content_for(:title, "User Transactions") %>
+
+<div class="container-fluid">
+
+<% if @transactions.any?  %>
+    <ul>
+      <% @transactions.each do |c| %>
+        <li>
+          <p>Sender: <%= c.sender %></p>
+          <p>Recepient: <%= c.recepient %></p>
+          <p>Reference Number: <%= c.reference_number %></p><hr>
+        </li>
+      <% end %>
+    </ul>
+
+
+  <% else %>
+    <p>Not allowed to access these records!</p>
+  <% end %>
