@@ -1,0 +1,14 @@
+<%= render "layouts/errors", :object => @transaction %>
+
+<div class="container-fluid">
+
+<%= form_for Transaction.new do |f| %>
+    <%= f.label :Sender_Email %>
+    <%= f.text_field :sender %><br>
+    <%= f.label :Reciepient %>
+    <%= f.text_field :recepient %><br>
+
+    <p><%= f.submit %></p>
+  <% end %>
+
+</div>

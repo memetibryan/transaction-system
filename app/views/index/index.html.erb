@@ -3,7 +3,24 @@
 <body>
 
 <title>transaction system</title>
-<p>Welcome</p>
+<p class="navbar-text pull-right">
+<% if user_signed_in? %>
+  Logged in as: <strong><%= current_user.email %></strong>.
+  <%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link' %> |
+  <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %>
+  <h3>TRANSACTION SYSTEM</h3>
+
+  <%= link_to 'My Account', profile_path(current_user) %><hr>
+
+   <%= link_to 'Transactions', transaction_path(current_user) %><hr>
+
+   <a href="/mpesa">Top My Account using Mpesa</a></p><hr>
+
+<% else %>
+  <%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link'  %> |
+  <%= link_to "Login", new_user_session_path, :class => 'navbar-link'  %>
+<% end %>
+</p>
 	
 </body>
  

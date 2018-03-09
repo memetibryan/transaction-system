@@ -1,0 +1,18 @@
+<%= render "layouts/errors", :object => @profile %>
+
+<div class="container-fluid">
+
+<%= form_for Profile.new do |f| %>
+    <%= f.label :Name %>
+    <%= f.text_field :name %><br>
+    <%= f.label :Email %>
+    <%= f.text_field :email %><br>
+    <%= f.label :Telephone %>
+    <%= f.text_field :number %><br>
+    <%= f.label :Account_Balance %>
+    <%= f.text_field :account_balance %><br>
+
+    <p><%= f.submit %></p>
+  <% end %>
+
+</div>
