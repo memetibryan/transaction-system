@@ -11,15 +11,14 @@ default: &default
 
 development:
   <<: *default
-  database: db/development.postgresql
+  database: transaction_system
 
-# Warning: The database defined as "test" will be erased and
-# re-generated from your development database when you run "rake".
-# Do not set this db to the same as development or production.
 test:
   <<: *default
-  database: db/test.postgresql
+  database: transaction_system
 
 production:
   <<: *default
-  database: db/production.postgresql
+  database: transaction_system
+  username: memetibryan
+  password: <%= ENV['password'] %>
