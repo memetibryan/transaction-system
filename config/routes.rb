@@ -1,7 +1,14 @@
 Rails.application.routes.draw do
 
-  devise_for :users
-  root :to => 'index#index'
+	root :to => 'index#index'
+
+  devise_for :users do
+  	resources :profiles
+  end
+
+  resources :profiles do
+    resources :users
+  end
 
   resources :profiles
   resources :transaction

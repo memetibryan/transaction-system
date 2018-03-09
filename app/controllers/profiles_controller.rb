@@ -6,21 +6,22 @@ class ProfilesController < ApplicationController
     end
 
     def show
-      @profile = Profile.find(params[:id])
+      @profiles = Profile.find(params[:id])
     end
 
     def new
-      @profile = Profile.new
+      @user = User.find(2)
+      @profile = @user.profiles.new
     end
 
     def create
-      @profile = Profile.new(profile_params)
-      if @profile.save
-        flash[:notice] = "profile successfully added!"
-        redirect_to profile_path(@profile)
-      else
-        render :new
-      end
+      @user = User.find(2)
+    @profile = @user.profiles.new(profile_params)
+    if @profile.save
+      redirect_to profile_path(@user)
+    else
+      render :new
+    end
     end
 
     def edit
