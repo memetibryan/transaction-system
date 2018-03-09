@@ -2,11 +2,13 @@
 
 <div class="container-fluid">
 
-<% if @p.id === current_user.id %>
+<% if @profile.id === current_user.id %>
 
     <ul>
       <p>Name: <%= @p.name %></p>
       <p>Email: <%= @p.email %></p>
+      <p>Telephone: <%= @p.number %></p>
+      <p>Account Balance: <%= @p.account_balance %></p>
     </ul>
 
   <% else %>
