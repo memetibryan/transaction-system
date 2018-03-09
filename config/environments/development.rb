@@ -1,5 +1,22 @@
 Rails.application.configure do
 
+  #devise authentication and mailing
+  config.action_mailer.perform_deliveries = true
+  config.action_mailer.raise_delivery_errors = true
+  config.action_mailer.default_url_options = { host:'localhost', port: '3000' }
+  config.action_mailer.default :charset => "utf-8"
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+    address: "smtp.gmail.com",
+    port: 587,
+    domain: "localhost:3000",
+    authentication: "plain",
+    enable_starttls_auto: true,
+    user_name: "infomemeti2@gmail.com",
+    password: "memetime"
+  }
+
+  #localtunnel configuration
   config.web_console.whiny_requests = false
   config.web_console.whitelisted_ips = '209.249.19.171'
   config.web_console.whitelisted_ips = '209.249.0.0/16'
