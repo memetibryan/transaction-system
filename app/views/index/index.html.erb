@@ -5,9 +5,18 @@
 <title>transaction system</title>
 <p class="navbar-text pull-right">
 <% if user_signed_in? %>
-  Logged in as <strong><%= current_user.email %></strong>.
+  Logged in as: <strong><%= current_user.email %></strong>.
   <%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link' %> |
   <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %>
+  <h3>TRANSACTION SYSTEM</h3>
+
+   <a href="/users/sign_up">Top My Account using MPesa</a></p><hr>
+   <a href="/transactions/"@user>Top My Account using MPesa</a></p><hr>
+
+  
+
+  </div>
+</div>
 <% else %>
   <%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link'  %> |
   <%= link_to "Login", new_user_session_path, :class => 'navbar-link'  %>

@@ -10,12 +10,12 @@ class TransactionsController < ApplicationController
     end
 
     def new
-      @user = User.find(2)
+      @user = current_user
       @transaction = @user.transactions.new
     end
 
     def create
-      @user = User.find(2)
+      @user = current_user
     @transaction = @user.transactions.new(transaction_params)
     if @transaction.save
       redirect_to transaction_path(@user)

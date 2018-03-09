@@ -14,5 +14,7 @@ Rails.application.routes.draw do
   resources :transactions do
     resources :users
   end
+
+  resources :mpesa
   
 end
