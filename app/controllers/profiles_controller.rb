@@ -1,8 +1,7 @@
 class ProfilesController < ApplicationController
 	before_action :authenticate_user!
 	
-	def index
-      @profiles = Profile.all   
+	def index 
     end
 
     def show
@@ -10,7 +9,7 @@ class ProfilesController < ApplicationController
     end
 
     def new
-      @user = User.find(2)
+      @user = User.find(params[:id])
       @profile = @user.profiles.new
     end
 
