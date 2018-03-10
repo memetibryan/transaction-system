@@ -17,13 +17,7 @@ class TransactionsController < ApplicationController
     def create
       @user = current_user
     @transaction = @user.transactions.new(transaction_params)
-    @val = params[:amount]
     if @transaction.save
-      @transactions = Profile.where(:user_id === @u)
-      @old_bal = @transactions.amount
-      @new_bal = (@old_bal - @val)
-     
-
       redirect_to transaction_path(@user)
     else
       render :new

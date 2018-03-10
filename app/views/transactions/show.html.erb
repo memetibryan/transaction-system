@@ -2,7 +2,7 @@
 
 <div class="container-fluid">
 
-<a href="/transactions/new">New Transaction</a></p><hr>
+<a href="/transactions/new" class="btn-primary">New Transaction</a></p><hr>
 
 <% if @transactions.any?  %>
     <ul>
@@ -10,6 +10,7 @@
         <li>
           <p>Sender: <%= c.sender %></p>
           <p>Recepient: <%= c.recepient %></p>
+          <p>Amount: <%= c.amount %></p>
           <p>Reference Number: <%= c.reference_number %></p><hr>
         </li>
       <% end %>
@@ -20,4 +21,4 @@
     <p>Not allowed to access these records!</p>
   <% end %>
 
-    <a href="/">Home</a></p><hr>
+    <a href="/" class="btn-primary">Home</a><hr>
