@@ -1,20 +1,3 @@
-Skip to content
-This repository
-Search
-Pull requests
-Issues
-Marketplace
-Explore
- @memetibryan
- Sign out
-1
-1 0 memetibryan/Brieme-Tech
- Code  Issues 0  Pull requests 0  Projects 0  Wiki  Insights  Settings
-Brieme-Tech/config/environments/production.rb
-ee7c061  on Aug 30, 2017
-@memetibryan memetibryan successfully implemented sending emails for email account verification
-    
-108 lines (82 sloc)  4.23 KB
 Rails.application.configure do
 
   config.action_mailer.perform_deliveries = true
