@@ -25,7 +25,7 @@ class MpesaController < ApplicationController
 		response = http.request(request)
 
 		#displays results of the get request
-		#json_response(response.read_body)
+		json_response(response.read_body)
 	end
 
 	def new
