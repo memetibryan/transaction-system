@@ -38,6 +38,7 @@ ActiveRecord::Schema.define(version: 20180310002429) do
     t.text "sender"
     t.text "recepient"
     t.text "reference_number"
+    t.bigint "amount"
     t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

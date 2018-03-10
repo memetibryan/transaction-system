@@ -1,7 +1,8 @@
 class ProfilesController < ApplicationController
 	before_action :authenticate_user!
 	
-	def index 
+	def index
+    @profiles = Profile.all
     end
 
     def show
