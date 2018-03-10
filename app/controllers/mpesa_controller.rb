@@ -25,6 +25,26 @@ class MpesaController < ApplicationController
 		response = http.request(request)
 
 		#displays results of the get request
-		json_response(response.read_body)
+		#json_response(response.read_body)
 	end
+
+	def new
+		@user = current_user
+        @mpesas = Mpesa.new()
+	end
+
+	def create
+      @user = current_user
+    @mpesa = @user.mpesas.new(mpesa_params)
+    if @mpesa.save
+      redirect_to mpesas_path(@user)
+    else
+      render :new
+    end
+    end
+
+    private
+    def mpesa_params
+      params.require(:profile).permit(:access_token, :customer_paybill, :amount, :bill_refnumber)
+    end
 end
