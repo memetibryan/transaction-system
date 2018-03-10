@@ -19,6 +19,7 @@ gem 'twilio-ruby'
 gem 'stripe'
 gem 'acts_as_votable'
 gem 'will_paginate'
+gem 'sendinblue'
 
 group :development, :test do
     gem 'byebug', platform: :mri

@@ -4,6 +4,7 @@ class CreateTransactions < ActiveRecord::Migration[5.1]
     	t.column :sender, :text
     	t.column :recepient, :text
     	t.column :reference_number, :text
+    	t.column :amount, :bigint
     	t.column :user_id, :integer
 
         t.timestamps

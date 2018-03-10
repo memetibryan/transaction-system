@@ -10,10 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180309193049) do
+ActiveRecord::Schema.define(version: 20180310002429) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "mpesas", force: :cascade do |t|
+    t.text "access_token"
+    t.text "customer_paybill"
+    t.bigint "amount"
+    t.text "bill_refnumber"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "profiles", force: :cascade do |t|
     t.text "name"
@@ -29,6 +38,7 @@ ActiveRecord::Schema.define(version: 20180309193049) do
     t.text "sender"
     t.text "recepient"
     t.text "reference_number"
+    t.bigint "amount"
     t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

@@ -1,4 +1,16 @@
 Rails.application.configure do
+  #sendinblue
+  #config.action_mailer.raise_delivery_errors = true
+  config.action_mailer.perform_deliveries = true
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+    :address => 'smtp-relay.sendinblue.com',
+    :port => 587,
+    :user_name => 'memetibryan@gmail.com',
+    :password => '7h4yF8ZrXMzNdE12',
+    :authentication => 'login',
+    :enable_starttls_auto => true
+  }
 
   #devise authentication and mailing
   config.action_mailer.perform_deliveries = true

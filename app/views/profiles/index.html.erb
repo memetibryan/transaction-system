@@ -1,6 +1,4 @@
-<% content_for(:title, "User Profile") %>
-
-<div class="container-fluid">
+<% if @profiles.any? %>
 
 <% if @profiles.user_id === current_user.id %>
 
@@ -15,4 +13,7 @@
     <p>Not allowed to access this account!</p>
   <% end %>
 
-  <a href="/">Home</a></p><hr>
+  <% else %>
+  	<p>Sorry!You dont have a profile. Create one first!!!</p>
+     <a href="/profiles/new">Create a profile.</a><hr>
+  <% end %>

@@ -1,0 +1,18 @@
+<%= render "layouts/errors", :object => @mpesas %>
+
+<div class="container-fluid">
+
+<%= form_for Mpesa.new do |f| %>
+    <%= f.label :access_token %>
+    <%= f.text_field :access_token %><br>
+    <%= f.label :CustomerPayBillOnline %>
+    <%= f.text_field :customer_paybill %><br>
+    <%= f.label :Amount %>
+    <%= f.text_field :amount %><br>
+    <%= f.label :BillRefNumber %>
+    <%= f.text_field :bill_refnumber %><br>
+
+    <p><%= f.submit %></p>
+  <% end %>
+
+</div>
