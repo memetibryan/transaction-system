@@ -1,8 +1,4 @@
-<% content_for(:title, "User Profile") %>
-
-<div class="container-fluid">
-
-<% if @profiles.user_id === current_user.id %>
+<% if @profile.user_id === current_user.id %>
 
     <ul>
       <p>Name: <%= @profiles.name %></p>
@@ -12,7 +8,6 @@
     </ul>
 
   <% else %>
-    <p>Not allowed to access this account!</p>
+  	<p>Sorry!You dont have a profile. Create one first!!!</p>
+     <a href="/profiles/new">Create a profile.</a><hr>
   <% end %>
-
- <a href="/" class="btn-primary">Home</a><hr>
