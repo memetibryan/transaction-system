@@ -1,12 +1,12 @@
 class ProfilesController < ApplicationController
 	before_action :authenticate_user!
 	
-	def index
-    @profiles = Profile.all
+	  def index
+      @profiles = Profile.all
     end
 
     def show
-      @profiles = Profile.find(params[:id])
+      @profile = Profile.find(params[:id])
     end
 
     def new
@@ -16,12 +16,12 @@ class ProfilesController < ApplicationController
 
     def create
       @user = current_user
-    @profile = @user.profiles.new(profile_params)
-    if @profile.save
-      redirect_to profile_path(@user)
-    else
-      render :new
-    end
+      @profile = @user.profiles.new(profile_params)
+      if @profile.save
+        redirect_to profile_path(@user)
+      else
+        render :new
+      end
     end
 
     def edit
