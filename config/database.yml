@@ -11,14 +11,14 @@ default: &default
 
 development:
   <<: *default
-  database: transaction_system
+  database: mpesa_transaction
 
 test:
   <<: *default
-  database: transaction_system
+  database: mpesa_transaction
 
 production:
   <<: *default
-  database: transaction_system
+  database: mpesa_transaction
   username: memetibryan
   password: <%= ENV['password'] %>
