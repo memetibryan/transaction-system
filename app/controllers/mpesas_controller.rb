@@ -37,10 +37,10 @@ class MpesasController < ApplicationController
 	end
 
 	def create
-      @user = current_user
-      @mpesa = @user.mpesas.new(mpesa_params)
+        @user = current_user
+        @mpesa = @user.mpesas.new(mpesa_params)
     if @mpesa.save
-      redirect_to mpesas_path(@user)
+        redirect_to mpesas_path(@user)
     else
       render :new
     end
@@ -48,6 +48,6 @@ class MpesasController < ApplicationController
 
     private
     def mpesa_params
-      params.require(:profile).permit(:access_token, :customer_paybill, :amount, :bill_refnumber)
+      params.require(:mpesa).permit(:access_token, :customer_paybill, :amount, :bill_refnumber)
     end
 end
