@@ -2,7 +2,7 @@
 
 <div class="container-fluid">
 
-<%= form_for Mpesa.new do |f| %>
+<%= form_for [@mpesas] do |f| %>
     <%= f.label :access_token %>
     <%= f.text_field :access_token %><br>
     <%= f.label :CustomerPayBillOnline %>

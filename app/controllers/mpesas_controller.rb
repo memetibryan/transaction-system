@@ -1,6 +1,9 @@
-class MpesaController < ApplicationController
+class MpesasController < ApplicationController
 	#index controller for index viewer
 	def index
+	end
+
+	def show
 		require 'net/http'
 		require 'net/https'
 		require 'uri'
@@ -15,7 +18,7 @@ class MpesaController < ApplicationController
 		request["accept"] = 'application/json'
 		request["content-type"] = 'application/json'
 		#access token
-		request["authorization"] = 'Bearer 9fAAXHt9Olgs0Lt62mYo0FVk5mFV'
+		request["authorization"] = 'Bearer hyMqDyAd6fwFbTyWdLzsndc7jd1ecYjG'
 		request.body = "{ \"ShortCode\":\" \",
   			\"CommandID\":\"CustomerPayBillOnline\",
   			\"Amount\":\" \",
@@ -30,12 +33,12 @@ class MpesaController < ApplicationController
 
 	def new
 		@user = current_user
-        @mpesas = Mpesa.new()
+        @mpesas = Mpesa.new
 	end
 
 	def create
       @user = current_user
-    @mpesa = @user.mpesas.new(mpesa_params)
+      @mpesa = @user.mpesas.new(mpesa_params)
     if @mpesa.save
       redirect_to mpesas_path(@user)
     else

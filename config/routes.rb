@@ -17,6 +17,6 @@ Rails.application.routes.draw do
   end
 
   resources :users
-  resources :mpesa
+  resources :mpesas
   
 end
