@@ -16,6 +16,7 @@ ActiveRecord::Schema.define(version: 20180310002429) do
   enable_extension "plpgsql"
 
   create_table "mpesas", force: :cascade do |t|
+    t.integer "user_id"
     t.text "access_token"
     t.text "customer_paybill"
     t.bigint "amount"

@@ -1,9 +1,6 @@
 class MpesasController < ApplicationController
-	#index controller for index viewer
-	def index
-	end
 
-	def show
+	def index
 		require 'net/http'
 		require 'net/https'
 		require 'uri'
@@ -37,10 +34,11 @@ class MpesasController < ApplicationController
 	end
 
 	def create
-        @user = current_user
-        @mpesa = @user.mpesas.new(mpesa_params)
+		@mpesas = Mpesa.new
+        @mpesa = Mpesa.new(mpesa_params)
     if @mpesa.save
-        redirect_to mpesas_path(@user)
+        #redirect_to mpesas_path(current_user)
+        redirect_to "/mpesas"
     else
       render :new
     end
@@ -48,6 +46,6 @@ class MpesasController < ApplicationController
 
     private
     def mpesa_params
-      params.require(:mpesa).permit(:access_token, :customer_paybill, :amount, :bill_refnumber)
+      params.require(:mpesa).permit(:access_token, :customer_paybill, :amount, :bill_refnumber, :user_id)
     end
 end

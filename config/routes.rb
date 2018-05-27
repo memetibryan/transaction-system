@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   devise_for :users do
   	resources :profiles
   	resources :transactions
+    resources :mpesas
   end
 
   resources :profiles do
@@ -16,7 +17,8 @@ Rails.application.routes.draw do
     resources :users
   end
 
-  resources :users
-  resources :mpesas
+  resources :mpesas do
+    resource :users
+  end
   
 end
