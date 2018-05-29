@@ -1,12 +1,9 @@
 class TransactionsController < ApplicationController
 	before_action :authenticate_user!
-	
-	  def index
-    end
 
-    def show
+    def index
       @u = current_user
-      @transactions = Transaction.where(:user_id === @u)
+      @transactions = Transaction.where(:user_id === 1)
     end
 
     def new

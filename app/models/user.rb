@@ -1,5 +1,5 @@
 class User < ApplicationRecord
-	has_many :profiles
+	belongs_to :profile
 	has_many :transactions
 	has_many :mpesas
 
