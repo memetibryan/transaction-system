@@ -1,4 +1,4 @@
-  <% if @profile.user_id === current_user.id %>
+  <% if @profile === current_user %>
     <ul>
       <p>Name: <%= @profile.name %></p>
       <p>Email: <%= @profile.email %></p>

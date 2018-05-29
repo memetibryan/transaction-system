@@ -6,7 +6,8 @@ class ProfilesController < ApplicationController
     end
 
     def show
-      @profile = Profile.find(params[:id])
+      @id = current_user
+      @profile = Profile.where(:id === @id)
     end
 
     def new
