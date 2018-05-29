@@ -13,7 +13,7 @@ Rails.application.configure do
     authentication: "plain",
     enable_starttls_auto: true,
     user_name: "infomemeti2@gmail.com",
-    password: "memetime"
+    password: "memetibryan"
   }
 
   #localtunnel configuration

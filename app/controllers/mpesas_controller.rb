@@ -1,6 +1,7 @@
 class MpesasController < ApplicationController
 
 	def index
+		@user = current_user
 		require 'net/http'
 		require 'net/https'
 		require 'uri'
