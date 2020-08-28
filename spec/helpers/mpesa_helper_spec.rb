@@ -10,5 +10,5 @@ require 'rails_helper'
 #   end
 # end
 RSpec.describe MpesaHelper, type: :helper do
-    pending "add some examples to (or delete) #{__FILE__}"
+    
 end
