@@ -16,10 +16,10 @@ class MpesasController < ApplicationController
 		request["accept"] = 'application/json'
 		request["content-type"] = 'application/json'
 		#access token
-		request["authorization"] = 'Bearer hyMqDyAd6fwFbTyWdLzsndc7jd1ecYjG'
+		request["authorization"] = 'Bearer hyMqDyAd6fwFbTyWdLzsndc7jd1ecYjG '
 		request.body = "{ \"ShortCode\":\"600000 \",
   			\"CommandID\":\"CustomerPayBillOnline\",
-  			\"Amount\":\" \",
+  			\"Amount\":\"1000\",
   			\"Msisdn\":\" 254708374149\",
   			\"BillRefNumber\":\" \" }"
 
