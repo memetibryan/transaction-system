@@ -12,7 +12,7 @@ Rails.application.configure do
     authentication: "plain",
     enable_starttls_auto: true,
     user_name: "infomemeti2@gmail.com",
-    password: "memetime"
+    password: "memetibryan"
   }
 
   # Settings specified here will take precedence over those in config/application.rb.
