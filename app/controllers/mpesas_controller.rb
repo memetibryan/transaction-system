@@ -14,7 +14,7 @@ class MpesasController < ApplicationController
   		http.use_ssl = true
   		http.verify_mode = OpenSSL::SSL::VERIFY_NONE
   
-  		request = Net::HTTP::Get.new(url)
+  		request = Net::HTTP::Post.new(url)
   		request["accept"] = 'application/json'
   		request["content-type"] = 'application/json'		
 
