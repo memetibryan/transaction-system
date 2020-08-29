@@ -5,19 +5,21 @@ class MpesasController < ApplicationController
 		@user = current_user
 
 		  require "uri"
-require "net/http"
+      require "net/http"
 
-url = URI("https://sandbox.safaricom.co.ke/mpesa/stkpush/v1/processrequest")
+      url = URI("https://sandbox.safaricom.co.ke/mpesa/stkpush/v1/processrequest")
 
-https = Net::HTTP.new(url.host, url.port);
-https.use_ssl = true
+      https = Net::HTTP.new(url.host, url.port);
+      https.use_ssl = true
 
 request = Net::HTTP::Post.new(url)
 request["Authorization"] = "Bearer N2AbY9F59OKlGjJLtSm7edoVGY5w"
 request["Content-Type"] = "application/json"
-request.body = "{\n    \"BusinessShortCode\": \"174379\",\n    
-\"Password\": \"MTc0Mzc5YmZiMjc5ZjlhYTliZGJjZjE1OGU5N2RkNzFhNDY3Y2QyZTBjODkzMDU5YjEwZjc4ZTZiNzJhZGExZWQyYzkxOTIwMTgxMDE1MTIzNTIw\",\n   
- \"Timestamp\": \"20181015123520\",\n  
+
+request.body = "{\n   
+ \"BusinessShortCode\": \"174379\",\n    
+  \"Password\": \"MTc0Mzc5YmZiMjc5ZjlhYTliZGJjZjE1OGU5N2RkNzFhNDY3Y2QyZTBjODkzMDU5YjEwZjc4ZTZiNzJhZGExZWQyYzkxOTIwMTgxMDE1MTIzNTIw\",\n   
+  \"Timestamp\": \"20181015123520\",\n  
    \"TransactionType\": \"CustomerPayBillOnline\",\n   
     \"Amount\": \"1\",\n   
      \"PartyA\": \"254704830480\",\n  
@@ -28,29 +30,29 @@ request.body = "{\n    \"BusinessShortCode\": \"174379\",\n
                \"TransactionDesc\": 
                \"BriemeINC\"\n}"
 
-response = https.request(request)
-puts response.read_body
+    response = https.request(request)
+    puts response.read_body
 		
 	end
 
-	# def new
-	# 	@user = current_user
- #        @mpesas = Mpesa.new
-	# end
+	def new
+		@user = current_user
+        @mpesas = Mpesa.new
+	end
 
-	# def create
-	# 	@mpesas = Mpesa.new
- #        @mpesa = Mpesa.new(mpesa_params)
- #    if @mpesa.save
- #        #redirect_to mpesas_path(current_user)
- #        redirect_to "/mpesas"
- #    else
- #      render :new
- #    end
- #    end
+	def create
+		@mpesas = Mpesa.new
+        @mpesa = Mpesa.new(mpesa_params)
+    if @mpesa.save
+        #redirect_to mpesas_path(current_user)
+        redirect_to "/mpesas"
+    else
+      render :new
+    end
+    end
 
- #    private
- #    def mpesa_params
- #      params.require(:mpesa).permit(:access_token, :customer_paybill, :amount, :bill_refnumber, :user_id)
- #    end
+    private
+    def mpesa_params
+      params.require(:mpesa).permit(:access_token, :customer_paybill, :amount, :bill_refnumber, :user_id)
+    end
 end
