@@ -19,26 +19,27 @@ class MpesasController < ApplicationController
   		request["content-type"] = 'application/json'		
 
 		#access token
-		request["authorization"] = 'Bearer PdcXBlCXsDsG5Z7zqJEFm3AAOT5h'
+		request["authorization"] = 'Bearer Wb1uxhLQWeNCRCps24OFRIQJnUjw'
 		request.body = "{
 
-      		BusinessShortCode: \"174379\",
-      		Password: \"MTc0Mzc5YmZiMjc5ZjlhYTliZGJjZjE1OGU5N2RkNzFhNDY3Y2QyZTBjODkzMDU5YjEwZjc4ZTZiNzJhZGExZWQyYzkxOTIwMjAwODI5MDg0MTIw\",
-      		Timestamp: \"20200829084120\",
-      		TransactionType: \"CustomerPayBillOnline\",
-      		Amount: \"100\",
-      		PartyA: \"254704830480\",
-      		PartyB: \"174379\",
-      		PhoneNumber: \"254704830480\",
-      		CallBackURL: \"localhost:3000/mpesas\";
-      		AccountReference: \"Test\",
-      		TransactionDesc: \"BriemeINC\"
-      	    }"
+        BusinessShortCode: \"174379\",
+        Password: \"MTc0Mzc5YmZiMjc5ZjlhYTliZGJjZjE1OGU5N2RkNzFhNDY3Y2QyZTBjODkzMDU5YjEwZjc4ZTZiNzJhZGExZWQyYzkxOTIwMTgxMDE1MTIzNTIw\",
+        Timestamp: \"20181015123520\",
+        TransactionType: \"CustomerPayBillOnline\",
+        Amount: \"500\",
+        PartyA: \"254704830480\",
+        PartyB: \"174379\",
+        PhoneNumber: \"254704830480\",
+        CallBackURL: \"https://28d07e1ecc94.ngrok.io/hooks/mpesa\",
+        AccountReference: \"Test\",
+        TransactionDesc: \"BriemeINC\"
+      }"
 
 		response = http.request(request)
 
     #displays results of the get request
-		json_response(response.code) 
+		puts response
+    console.log(MerchantRequestID)
 		
 	end
 
