@@ -4,42 +4,32 @@ class MpesasController < ApplicationController
   
 		@user = current_user
 
-		  require 'net/http'
-  		require 'net/https'
-  		require 'uri'
-  
-  		url = URI('https://sandbox.safaricom.co.ke/mpesa/stkpush/v1/processrequest')
-  
-  		http = Net::HTTP.new(url.host, url.port)
-  		http.use_ssl = true
-  		http.verify_mode = OpenSSL::SSL::VERIFY_NONE
-  
-  		request = Net::HTTP::Post.new(url)
-  		request["accept"] = 'application/json'
-  		request["content-type"] = 'application/json'		
+		  require "uri"
+require "net/http"
 
-		#access token
-		request["authorization"] = 'Bearer Wb1uxhLQWeNCRCps24OFRIQJnUjw'
-		request.body = "{
+url = URI("https://sandbox.safaricom.co.ke/mpesa/stkpush/v1/processrequest")
 
-        BusinessShortCode: \"174379\",
-        Password: \"MTc0Mzc5YmZiMjc5ZjlhYTliZGJjZjE1OGU5N2RkNzFhNDY3Y2QyZTBjODkzMDU5YjEwZjc4ZTZiNzJhZGExZWQyYzkxOTIwMTgxMDE1MTIzNTIw\",
-        Timestamp: \"20181015123520\",
-        TransactionType: \"CustomerPayBillOnline\",
-        Amount: \"500\",
-        PartyA: \"254704830480\",
-        PartyB: \"174379\",
-        PhoneNumber: \"254704830480\",
-        CallBackURL: \"https://28d07e1ecc94.ngrok.io/hooks/mpesa\",
-        AccountReference: \"Test\",
-        TransactionDesc: \"BriemeINC\"
-      }"
+https = Net::HTTP.new(url.host, url.port);
+https.use_ssl = true
 
-		response = http.request(request)
+request = Net::HTTP::Post.new(url)
+request["Authorization"] = "Bearer N2AbY9F59OKlGjJLtSm7edoVGY5w"
+request["Content-Type"] = "application/json"
+request.body = "{\n    \"BusinessShortCode\": \"174379\",\n    
+\"Password\": \"MTc0Mzc5YmZiMjc5ZjlhYTliZGJjZjE1OGU5N2RkNzFhNDY3Y2QyZTBjODkzMDU5YjEwZjc4ZTZiNzJhZGExZWQyYzkxOTIwMTgxMDE1MTIzNTIw\",\n   
+ \"Timestamp\": \"20181015123520\",\n  
+   \"TransactionType\": \"CustomerPayBillOnline\",\n   
+    \"Amount\": \"1\",\n   
+     \"PartyA\": \"254704830480\",\n  
+       \"PartyB\": \"174379\",\n    
+       \"PhoneNumber\": \"254704830480\",\n  
+         \"CallBackURL\": \"https://28d07e1ecc94.ngrok.io/hooks/mpesa\",\n 
+            \"AccountReference\": \"Test\",\n 
+               \"TransactionDesc\": 
+               \"BriemeINC\"\n}"
 
-    #displays results of the get request
-		puts response
-    console.log(MerchantRequestID)
+response = https.request(request)
+puts response.read_body
 		
 	end
 
